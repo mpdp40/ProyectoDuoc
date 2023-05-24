@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>SuperMercado Golpe</title>
+    
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light "style="background-color: #ff9823;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-danger text-justify" href="#">Golpe</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraLateral" aria-controls="barraLateralt" aria-expanded="false" 
+          aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="barraLateral">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-danger"  href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Alimentos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="Dulces.html">Dulces</a></li>
+                  <li><a class="dropdown-item" href="Salados.html">Salados</a></li>
+                  <li><a class="dropdown-item" href="Jugos.html">Jugos</a></li>
+                  <li><a class="dropdown-item" href="Gaseosas.html">gaseosas</a></li>
+                </ul>
+              </li>
+            </ul>
+            
+            <button class="btn btn-danger me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onclick="llenar_carrtio()">
+               
+                <i class="fa-solid fa-cart-shopping"></i>
+                
+
+            
+          </div>
+        </div>
+      </nav>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col"></th>
+
+                </tr>
+              </thead>
+              <tbody id="carrito-producto">
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text text-end">Total $
+              <span id="carrito-precio">0</span>
+            </p>
+            
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-success btn-lg" type="button" onclick="" >
+                    <a class="icon-link text-white " href="Carrito.html">COMPRAR</a>
+                    
+                </button>
+                <button class=" btn btn-danger"  id="btnComprar" onclick="vaciar_carrtio()">X</button>
+            </div>
+        </div>
+      </div>
+      <div class="container-fluid mt-3  " style="background-color: rgb(255, 255, 255); width:85%; ">
+        <div class="row ">
+          <div class="col m-4" style="background-color: rgb(255, 202, 104)">
+            <div class="card shadow-sm m-3" 
+            id="producto-1"
+            data-img="Productos/dulces/Super8.jpg"
+            data-nombre="Super 8, 42 g"
+            data-precio="1250">
+              
+              <img src="Productos/dulces/Super8.jpg" class="img-fluid" alt="Super8">
+              <div class="card-body">
+                <h5 class="card-title">Super 8, 42 g</h5>
+                <p class="card-text text-Satar text-primary ">1 Unidad</p>
+                <button class="btn btn-danger" type="button" id="btnComprar" onclick="comprar(1)">$1250</button>
+              </div>
+                
+            </div>
+          </div>
+          <div class="col m-4 " style="background-color: rgb(255, 202, 104)"  >
+            <div class="card shadow-sm m-3"
+            id="producto-2"
+            data-img="Productos/dulces/CHOCOLATEconmani.jpg"
+            data-nombre="Chocolate-Sahne-Nuss, 250 g"
+            data-precio="3950">
+              <img src="Productos/dulces/CHOCOLATEconmani.jpg" class="img-fluid" alt="CHOCOLATEconmani">
+              <div class="card-body">
+                <h5 class="card-title">Chocolate-Sahne-Nuss, 250 g</h5>
+                <p class="card-text text-Satar text-primary ">1 Unidad</p>
+                <button class="btn btn-danger" type="button" id="btnComprar" onclick="comprar(2)">$3950</button>
+              </div>
+            </div>
+          </div>
+          <div class="col m-4" style="background-color: rgb(255, 202, 104)">
+            <div class="card shadow-sm m-3"
+            id="producto-3"
+            data-img="Productos/dulces/Suny.jpg"
+            data-nombre="Caluga Suny, 200 g"
+            data-precio="1690">
+              <img src="Productos/dulces/Suny.jpg" class="img-fluid" alt="suny">
+              <div class="card-body">
+                <h5 class="card-title">Caluga Suny, 200 g</h5>
+                <p class="card-text text-Satar text-primary ">1 Unidad</p>
+                <button class="btn btn-danger" type="button" id="btnComprar" onclick="comprar(3)">$1690</button>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> 
+    <script>
+      var array_carrito = [];
+      if (localStorage.getItem('PRODUCTOS')) {
+            array_carrito = JSON.parse(localStorage.getItem('PRODUCTOS')) || [];
+        }
+        function comprar(id) {
+
+            var producto = $('#producto-' + id);
+
+            var p = {
+                id: id,
+                img: producto.data('img'),
+                nombre: producto.data('nombre'),
+                precio: producto.data('precio')
+            };
+            array_carrito.push(p);
+
+              console.log(array_carrito);
+
+              localStorage.setItem('PRODUCTOS', JSON.stringify(array_carrito));
+
+              llenar_carrtio();
+              }
+
+            function llenar_carrtio() {
+            $('#carrito-producto').html('');   
+            var texto = '';
+            var total = 0;
+            array_carrito.forEach(carrito => {
+                texto = texto + `
+                <tr>
+                  <td><img src="${carrito.img}" width="50px"></td>
+                  <td>${carrito.nombre}</td>
+                  <td>$${carrito.precio}</td>
+                </tr>
+                `;
+
+                total += carrito.precio;
+            });
+
+            $('#carrito-producto').append(texto);         
+            $('#carrito-precio').html(total);
+
+        }
+        function vaciar_carrtio() {
+          array_carrito.length=0;
+          llenar_carrtio();
+        }
+    </script>
+    </body>
+
+</body>
+</html>
